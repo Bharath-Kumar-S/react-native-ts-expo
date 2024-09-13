@@ -1,26 +1,45 @@
 import React,{useState} from "react";
-import { View,Text,TextInput,StyleSheet,Button,ImageBackground} from "react-native";
-import BG from "../assets/Background.jpg";
+import { View,Text,TextInput,StyleSheet,Button,ImageBackground,Image} from "react-native";
+import BG from '../assets/Background.jpg';
+import Images from '../assets/Mail.png';
 
-const Sub = ({navigation}) => {
+const Sub = () => {
 
     const [mail,setmail]=useState('')
-
-    const check=()=>{
+    const email = {'email':mail}
+    const check= async ()=>{
         if (mail == ''){
            alert('Enter a Valid mail')
             return
-        }
+        } 
+        try{
+        const response = await fetch("http://10.0.2.2:5000/subscribe",{
+            method:'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify(email)
+            
+        });
+        alert(response.status === 201 ? "subscribed successfully":'Email already exist' )
+        }catch(error){
+        alert(error)
+    }   
     }
     return(
         
         <View
         style = {styles.container}>
             <ImageBackground source={BG} resizeMode="cover" style={styles.image}>
-            <Text style={{fontWeight:'bold',fontSize:40,textAlign:'center',marginTop:60}}>Subscribe Us</Text>
+            <Text style={styles.sub}>Subscribe Us</Text>
+            <View style={styles.views}>
+                <Image 
+                source ={Images}
+                style={styles.image1}>
+                </Image>
+            </View>
             <View
             style={styles.inner}>
-            <Text style={{fontWeight:'bold',fontSize:30}}>Enter Mail ID</Text>
             <TextInput
                 value={mail}
                 keyboardAppearance="dark"
@@ -51,19 +70,37 @@ const styles = StyleSheet.create({
         margin: 10,
         height:55,
         fontWeight:'bold',
+        backgroundColor:'ffffff',
+        color:'ffffff',
+        zIndex:1000
+
     },
     inner:{
-        flex:1,
-        justifyContent:'center',
-        textAlign:'center',
-        alignItems:'center'
+        alignItems:'center',
+        marginTop:30,
     },
     image:{
         flex: 1,
-  
         width:'100%',
         height: '100%',
       },
+      image1:{
+        width:160,
+        height:130,
+        borderRadius:30,
+        borderColor:'#000000',
+        marginTop:30
+      },
+      views:{
+        alignItems: 'center',
+      },
+      sub:{
+        fontWeight:'bold',
+        fontSize:40,
+        textAlign:'center',
+        marginTop:120,
+        borderRadius:30
+      }
 })
 
 export default Sub;

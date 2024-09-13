@@ -61,7 +61,7 @@ export default function Home({navigation}) {
       <TextInput
         value={pass1}
         keyboardAppearance="dark"
-        keyboardType="numeric"
+        keyboardType="default"
         onChangeText={(text) => setpass1(text)}
         placeholder="Enter Your Password"
         style={styles.items}
@@ -70,7 +70,7 @@ export default function Home({navigation}) {
       <TextInput
         value={pass2}
         keyboardAppearance="dark"
-        keyboardType="numeric"
+        keyboardType="default"
         onChangeText={(text) => setpass2(text)}
         placeholder="Confirm your password"
         style={styles.items}
