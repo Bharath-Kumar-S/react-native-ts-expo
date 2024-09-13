@@ -31,17 +31,18 @@ export default function Home({navigation}) {
     <ImageBackground source={BG} resizeMode="cover" style={styles.image}>
       <Text style={styles.head}>PolarWeb.io</Text>
       <StatusBar style="dark" hidden />
+      <Text style={styles.label}>Name</Text>
       <TextInput
         value={name}
+        aria-label="Name"
         keyboardAppearance="dark"
         keyboardType="default"
         onChangeText={(text) => setName(text)}
         placeholder="Enter your name"
         style={styles.items}
         autoFocus={true}
-        
-
       />
+      <Text style={styles.label}>Age</Text>
       <TextInput
         value={age}
         keyboardType="numeric"
@@ -49,6 +50,7 @@ export default function Home({navigation}) {
         placeholder="Enter your age"
         style={styles.items}
       />
+      <Text style={styles.label}>Phone Number</Text>
       <TextInput
         value={number}
         keyboardAppearance="dark"
@@ -58,6 +60,7 @@ export default function Home({navigation}) {
         maxLength={10}
         style={styles.items}
       />
+      <Text style={styles.label}>Password</Text>
       <TextInput
         value={pass1}
         keyboardAppearance="dark"
@@ -67,6 +70,7 @@ export default function Home({navigation}) {
         style={styles.items}
         secureTextEntry={true}
       />
+      <Text style={styles.label}>Confirm Password</Text>
       <TextInput
         value={pass2}
         keyboardAppearance="dark"
@@ -76,6 +80,7 @@ export default function Home({navigation}) {
         style={styles.items}
         secureTextEntry={true}
       />
+      <Text style={styles.label}>E-mail</Text>
       <TextInput
         value={mail}
         keyboardAppearance="dark"
@@ -108,6 +113,13 @@ const styles = StyleSheet.create({
     paddingBottom:50,
     color:''
   },
+  label:{
+    width: '87%',
+    marginTop: 10,
+    marginBottom: -5,
+    fontWeight: 'bold',
+    fontSize: 15
+  },
   items:{
     justifyContent: 'center',
     width:'90%',
@@ -116,7 +128,8 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     height:45,
-    fontWeight:'bold'
+    fontWeight:'bold',
+    backgroundColor: 'white'
 },
   image:{
     flex: 1,

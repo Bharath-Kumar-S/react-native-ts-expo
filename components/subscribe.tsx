@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
         margin: 10,
         height:55,
         fontWeight:'bold',
+        backgroundColor: 'white'
     },
     inner:{
         flex:1,
