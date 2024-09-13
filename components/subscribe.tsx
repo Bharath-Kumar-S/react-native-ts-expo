@@ -31,7 +31,7 @@ const Sub = () => {
         <View
         style = {styles.container}>
             <ImageBackground source={BG} resizeMode="cover" style={styles.image}>
-            <Text style={styles.sub}>Subscribe Us</Text>
+            <Text style={styles.sub}>Subscribe us</Text>
             <View style={styles.views}>
                 <Image 
                 source ={Images}
@@ -45,7 +45,7 @@ const Sub = () => {
                 keyboardAppearance="dark"
                 keyboardType="default"
                 onChangeText={(text) => setmail(text)}
-                placeholder="Enter you Mail"
+                placeholder="Enter you mail"
                 inputMode="email"
                 style={styles.items}
                 >
@@ -67,13 +67,13 @@ const styles = StyleSheet.create({
         borderRadius:10,
         borderWidth: 1,
         padding: 10,
-        margin: 10,
+        margin: 40,
         height:55,
         fontWeight:'bold',
         backgroundColor:'ffffff',
         color:'ffffff',
-        zIndex:1000
-
+        zIndex:1000,
+        backgroundColor: 'white'
     },
     inner:{
         alignItems:'center',

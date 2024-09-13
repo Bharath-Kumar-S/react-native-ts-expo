@@ -31,6 +31,7 @@ export default function Home({navigation}) {
     <ImageBackground source={BG} resizeMode="cover" style={styles.image}>
       <Text style={styles.head}>PolarWeb.io</Text>
       <StatusBar style="dark" hidden />
+      <Text style={styles.label}>Name</Text>
       <TextInput
         value={name}
         keyboardAppearance="dark"
@@ -39,9 +40,8 @@ export default function Home({navigation}) {
         placeholder="Enter your name"
         style={styles.items}
         autoFocus={true}
-        
-
       />
+      <Text style={styles.label}>Age</Text>
       <TextInput
         value={age}
         keyboardType="numeric"
@@ -49,24 +49,27 @@ export default function Home({navigation}) {
         placeholder="Enter your age"
         style={styles.items}
       />
+      <Text style={styles.label}>Phone Number</Text>
       <TextInput
         value={number}
         keyboardAppearance="dark"
         keyboardType="numeric"
         onChangeText={(text) => setNumber(text)}
-        placeholder="Enter Your Number"
+        placeholder="Enter your number"
         maxLength={10}
         style={styles.items}
       />
+      <Text style={styles.label}>Password</Text>
       <TextInput
         value={pass1}
         keyboardAppearance="dark"
         keyboardType="default"
         onChangeText={(text) => setpass1(text)}
-        placeholder="Enter Your Password"
+        placeholder="Enter your password"
         style={styles.items}
         secureTextEntry={true}
       />
+      <Text style={styles.label}>Confirm Password</Text>
       <TextInput
         value={pass2}
         keyboardAppearance="dark"
@@ -76,19 +79,20 @@ export default function Home({navigation}) {
         style={styles.items}
         secureTextEntry={true}
       />
+      <Text style={styles.label}>E-mail</Text>
       <TextInput
         value={mail}
         keyboardAppearance="dark"
         keyboardType="default"
         onChangeText={(text) => setmail(text)}
-        placeholder="Enter Your Mail"
+        placeholder="Enter your mail"
         inputMode="email"
         style={styles.items}
       />
       <Picker />
-      <Button color='#000000' title="Sign Up" onPress={handleSumbit} />
+      <Button color='#000000' title="Sign up" onPress={handleSumbit} />
       <View style={styles.button}>
-      <Button color = '#000000' title="Subscribe Us" onPress={()=>navigation.navigate('subscribe')} />
+      <Button color = '#000000' title="Subscribe us" onPress={()=>navigation.navigate('subscribe')} />
       </View>
       </ImageBackground>
     </View>
@@ -108,6 +112,13 @@ const styles = StyleSheet.create({
     paddingBottom:50,
     color:''
   },
+  label:{
+    width: '87%',
+    marginTop: 10,
+    marginBottom: -5,
+    fontWeight: 'bold',
+    fontSize: 15
+  },
   items:{
     justifyContent: 'center',
     width:'90%',
@@ -116,7 +127,8 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     height:45,
-    fontWeight:'bold'
+    fontWeight:'bold',
+    backgroundColor: 'white'
 },
   image:{
     flex: 1,

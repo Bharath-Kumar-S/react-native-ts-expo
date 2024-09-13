@@ -9,9 +9,9 @@ const AppNavigator = () => {
     return(
         <Stack.Navigator initialRouteName="Home">
             <Stack.Screen name="Home" component={Homescreen} options={{headerShown:false}} />
-            <Stack.Screen name="subscribe" component={subscribe} options={{headerShown:false}}/>
+            <Stack.Screen name="subscribe" component={subscribe} options={{headerTitle:"PolarWeb.io", headerTitleAlign: "center", headerTransparent:true}}/>
         </Stack.Navigator>
     );
 };
 
-export default AppNavigator;
+export default AppNavigator;    
