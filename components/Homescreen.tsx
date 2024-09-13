@@ -55,7 +55,7 @@ export default function Home({navigation}) {
         keyboardAppearance="dark"
         keyboardType="numeric"
         onChangeText={(text) => setNumber(text)}
-        placeholder="Enter Your Number"
+        placeholder="Enter your number"
         maxLength={10}
         style={styles.items}
       />
@@ -65,7 +65,7 @@ export default function Home({navigation}) {
         keyboardAppearance="dark"
         keyboardType="default"
         onChangeText={(text) => setpass1(text)}
-        placeholder="Enter Your Password"
+        placeholder="Enter your password"
         style={styles.items}
         secureTextEntry={true}
       />
@@ -85,14 +85,14 @@ export default function Home({navigation}) {
         keyboardAppearance="dark"
         keyboardType="default"
         onChangeText={(text) => setmail(text)}
-        placeholder="Enter Your Mail"
+        placeholder="Enter your mail"
         inputMode="email"
         style={styles.items}
       />
       <Picker />
-      <Button color='#000000' title="Sign Up" onPress={handleSumbit} />
+      <Button color='#000000' title="Sign up" onPress={handleSumbit} />
       <View style={styles.button}>
-      <Button color = '#000000' title="Subscribe Us" onPress={()=>navigation.navigate('subscribe')} />
+      <Button color = '#000000' title="Subscribe us" onPress={()=>navigation.navigate('subscribe')} />
       </View>
       </ImageBackground>
     </View>
