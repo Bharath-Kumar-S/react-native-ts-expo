@@ -34,7 +34,6 @@ export default function Home({navigation}) {
       <Text style={styles.label}>Name</Text>
       <TextInput
         value={name}
-        aria-label="Name"
         keyboardAppearance="dark"
         keyboardType="default"
         onChangeText={(text) => setName(text)}
